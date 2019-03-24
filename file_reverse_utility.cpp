@@ -17,7 +17,7 @@ long long reverse_file(std::string const &file, std::string const &reversed);
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        std::cerr << "Incorrect arguments. Expected: \"program.exe input.dat output.dat\"";
+        std::cerr << "Incorrect arguments. Expected: \"<program> <input> <output>\"";
         return -1;
     }
 
@@ -41,6 +41,10 @@ int main(int argc, char *argv[]) {
 
 
 long long reverse_file(std::string const &file, std::string const &reversed) {
+    if (file == reversed) {
+        throw std::runtime_error("Input and output files should be different");
+    }
+
     std::ifstream in(file, std::ifstream::binary);
     std::ofstream out(reversed, std::ifstream::binary);
 
@@ -82,7 +86,7 @@ void reverse_stream(std::istream &in, std::ostream &out, long long n) {
     }
 }
 
-long long size(std::ifstream &file) {
+long long size(std::ifstream &file) { // returns stream pointer to the beginning of the file
     file.seekg(0, std::ifstream::end);
     long long res = file.tellg();
     file.seekg(0, std::ifstream::beg);
