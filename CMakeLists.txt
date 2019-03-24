@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(test main.cpp)
+add_executable(reverse_file main.cpp)
