@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
-
+#include <ctime>
 
 /// You can also see this project with tests on my GitHub: https://github.com/SINBRO/file_reverse
 
