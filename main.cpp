@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
                   << file_size / ((double) working_time / CLOCKS_PER_SEC) << " mb/s).";
 
     } catch (std::runtime_error &e) {
-        std::cerr << "Unable to reverse \"" << src << "\" in \"" << dst << ": " << e.what();
+        std::cerr << "Unable to reverse \"" << src << "\" into \"" << dst << "\": " << e.what();
         return -1;
     }
 }
